@@ -3,13 +3,12 @@ from tkinter import Tk, Entry, Button, Label
 
 root = Tk()
 
-
-
 input = Entry(root, width=25, bg="#cdcddc")
 input.grid(row=0, column=0)
 
 def onClick() :
-    output = Label(root, text="Hello "+input.get())
+    message = "Hello "+input.get()
+    output = Label(root, text=message)
     output.grid(row=2, column=0)
 
 button = Button(root, text="Enter Your Name", padx=5, command=onClick, bg="#cdf")
