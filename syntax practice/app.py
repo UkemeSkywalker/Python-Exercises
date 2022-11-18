@@ -128,7 +128,7 @@
 
 
 ## List Methods
-### add Tickte number to list
+### add Tickt number to list
 
 # Ticket_Numbers = [232,10344773,6656.0924,315006,-347,224,670.5,]
 # print(Ticket_Numbers)
@@ -190,11 +190,11 @@
 
 ## Tuples
 
-names = ("Ukeme", 10, True, 10.45 )
-name2 = ["Ukeme", "Ukeme", 10, 5,5,5,5, True, 10.45 ]
-# for items in name2 :
-#     print(items)
+# names = ("Ukeme", 10, True, 10.45 )
+# name2 = ["Ukeme", "Ukeme", 10, 5,5,5,5, True, 10.45 ]
+# # for items in name2 :
+# #     print(items)
 
-names.count(5)
-# print(check)
-print(names)
+# names.count(5)
+# # print(check)
+# print(names)
