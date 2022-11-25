@@ -19,9 +19,9 @@ class Cars :
 __hash__ = None
 
 
-car = Cars("Toyota", "Corolla")
+# car = Cars("Toyota", "Corolla")
 
-print(car)
+# print(car)
 # car.list_all_companies()
 
 # car_input = car.add_Car_name("Toyota", "Corolla")
@@ -33,3 +33,17 @@ print(car)
 # print("New car "+ last_car+ " added")
 # print(car.car_names[-1])
 # print(car.company)
+
+
+
+class Customers :
+
+    def __init__(self, name, membership_type) :
+        self.name = name
+        self.membership_type = membership_type
+
+
+customer = [Customers('Ukeme', 'Gold'),
+            Customers('chiboy', 'Bronze')]
+
+print(customer[0])
