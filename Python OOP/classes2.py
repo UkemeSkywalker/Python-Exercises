@@ -26,18 +26,32 @@ class Footballer:
         self.club = club
         self.country = country
 
-        print(name +" Club : " +club+" Country :  "+ country+" created" )
+        # print(name +" Club : " +club+" Country :  "+ country+" created" )
 
 
     def change_club(self, new_club):
         self.club = new_club
         print(self.name + " has moved to "+ new_club)
 
+    def __str__(self) -> str:
+        return(self.name+" "+ self.club+" "+self.country) 
+       
+
+    def get_all_footballers(footballers):
+        for footballer in footballers:
+            print(footballer)
+    __repr__ = __str__
+
 f = [Footballer("Ronaldo", "ManU","Portugal"),
     Footballer("Gerrad", "Liverpool", "England")]
 
-print(f[0].name+" plays for "+f[0].club)
-f[0].change_club("Arsenal")
+    
+
+print(f)
+Footballer.get_all_footballers(f)
+
+# print(f[0].name+" plays for "+f[0].club)
+# f[0].change_club("Arsenal")
 
 
 
