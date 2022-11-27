@@ -67,47 +67,42 @@ def equal() :
 e = Entry(root, borderwidth=5,  width= 30, bg="#ccddff")
 e.grid(row=0, column=0, columnspan=4, padx=2, pady=5)
 
+def create_button(text, padx, pady, number, row, column):
+    new_button = Button(text = text,padx = padx, pady = pady, command = lambda: onClickButton(number))
+    print("Button Created")
+    new_button.grid(row=row, column=column)
+
+# create_button("10", 20, 15, "10")
 
 
-
-button7 = Button(text="7", padx=20, pady=15, command=lambda: onClickButton(7))
-button8 = Button(text="8", padx=20, pady=15, command=lambda: onClickButton(8))
-button9 = Button(text="9", padx=20, pady=15, command=lambda: onClickButton(9))
+button7 = create_button("7", 20, 15, 7, 1, 0)
+button8 = create_button("8", 20, 15, 8,1,1 )
+button9 = create_button("9", 20, 15, 9, 1, 2)
 divButton = Button(text="%", padx=20, pady=15, command=div)
 
-button4 = Button(text="4", padx=20, pady=15, command=lambda: onClickButton(4))
-button5 = Button(text="5", padx=20, pady=15, command=lambda: onClickButton(5))
-button6 = Button(text="6", padx=20, pady=15, command=lambda: onClickButton(6))
-mulButton = Button(text="x ", padx=20, pady=15, command=mul)
 
-button3 = Button(text="3", padx=20, pady=15, command=lambda: onClickButton(3))
-button2 = Button(text="2", padx=20, pady=15, command=lambda: onClickButton(2))
-button1 = Button(text="1", padx=20, pady=15, command=lambda: onClickButton(1))
-subButton = Button(text="- ", padx=20, pady=15, command=sub)
+def new_func(onClickButton, add, sub, mul, clear, equal, create_button):
+    button4 = create_button("4", 20, 15, 4, 2, 0)
+    button5 = create_button("5", 20, 15, 5, 2, 1)
+    button6 = create_button("6", 20, 15, 6, 2, 2)
+    mulButton = Button(text="x ", padx=20, pady=15, command=mul)
 
-button0 = Button(text="0", padx=20, pady=15, command=lambda: onClickButton(0))
-clearButton = Button(text="CE", padx=20, pady=15, relief='flat', command= clear)
-equalButton = Button(text="=", padx=20, pady=15, bg="blue", fg="#fff", command=equal)
-plusButton = Button(text="+ ", padx=20, pady=15, command=add)
+    button3 = create_button("3", 20, 15, 3, 3, 0)
+    button2 = create_button("2", 20, 15, 2, 3, 1)
+    button1 = create_button("1", 20, 15, 1, 3, 2)
+    subButton = Button(text="- ", padx=20, pady=15, command=sub)
+    # button0 = Button(text="0", padx=20, pady=15, command=lambda: onClickButton(0))
+    button0 = create_button("0", 20, 15, 4, 0, 0)
+    clearButton = Button(text="CE", padx=20, pady=15, relief='flat', command= clear)
+    equalButton = Button(text="=", padx=20, pady=15, bg="blue", fg="#fff", command=equal)
+    plusButton = Button(text="+ ", padx=20, pady=15, command=add)
+    return mulButton,subButton,button0,clearButton,equalButton,plusButton
 
-
-
-button7.grid(row=1, column=0)
-button8.grid(row=1, column=1)
-button9.grid(row=1, column=2)
+mulButton, subButton, button0, clearButton, equalButton, plusButton = new_func(onClickButton, add, sub, mul, clear, equal, create_button)
 divButton.grid(row=1, column=3)
-
-button6.grid(row=2, column=0)
-button5.grid(row=2, column=1)
-button4.grid(row=2, column=2)
 mulButton.grid(row=2, column=3)
-
-button3.grid(row=3, column=0)
-button2.grid(row=3, column=1)
-button1.grid(row=3, column=2)
 subButton.grid(row=3, column=3)
 
-button0.grid(row=4, column=0)
 clearButton.grid(row=4, column=1)
 equalButton.grid(row=4, column=2)
 plusButton.grid(row=4, column=3)
