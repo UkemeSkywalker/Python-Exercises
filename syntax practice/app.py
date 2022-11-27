@@ -198,3 +198,17 @@
 # names.count(5)
 # # print(check)
 # print(names)
+
+
+
+command_list = ["showinfo","showwarning", "showerror","askquestion", "askokcancel", "askyesno" ]
+
+# for word in command_list:
+#     print(word)
+
+i = 0
+while i < len(command_list):
+    print(command_list[i])
+    i += 1
+
+
