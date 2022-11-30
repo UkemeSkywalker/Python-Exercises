@@ -44,28 +44,6 @@ customer1 = Customer("Jude", "Law")
 #                     Customer("Emman", "Bronze")]
 
 
-# Customer.all_customers()
-# Customer("James", "Platnum")
-
-
-# print(some_customers[0] == some_customers[1])
-# print(some_customers)
-
-# Check object Ids
-# print(id(some_customers[0]), id(some_customers[1]))
-
-# print(customer1.name, customer1.membership_type);
-# print(some_customers[0].name)
-
-# some_customers[2].update_customer("Water")
-
-# print(some_customers[2].name, some_customers[2].membership_type)
-
-# print(some_customers[1])
-
-# Customer.show_all_customers(some_customers)
-
-
 class Read_File :
 
     def open_file() :
