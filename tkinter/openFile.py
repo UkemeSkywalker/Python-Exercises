@@ -4,8 +4,9 @@ from tkinter import filedialog
 
 root = Tk()
 
-root.filename = filedialog.askopenfilename(filetypes=(("All Files", "*.*"), ))
-Label(root, text=root.filename).pack()
+def openFile(root):
+    root.filename = filedialog.askopenfilename(filetypes=(("All Files", "*.*"), ))
+    Label(root, text=root.filename).pack()
 
-
+openFile(root)
 root.mainloop()

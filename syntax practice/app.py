@@ -208,6 +208,7 @@ command_list = ["showinfo","showwarning", "showerror","askquestion", "askokcance
 
 i = 0
 while i < len(command_list):
+    cleanse = command_list[i].strip().split(" ")
     print(command_list[i])
     i += 1
 

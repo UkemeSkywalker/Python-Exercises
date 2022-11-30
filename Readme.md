@@ -5,3 +5,6 @@
 3. Email Slicer
 4. Password Generator 
 5. Simple Calculator 
+
+
+// check github.com/jmwai
