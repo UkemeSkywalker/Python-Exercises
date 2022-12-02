@@ -1,3 +1,5 @@
+from tkinter import *
+
 class Customer :
 
     def __init__(self, name, membership_type):
@@ -37,28 +39,14 @@ class Customer :
 
 
 
-customer1 = Customer("Jude", "Law")
-
-# some_customers = [  Customer("Mom", "Gold"),
-#                     Customer("Dad", "Silver"),
-#                     Customer("Emman", "Bronze")]
+# customer1 = Customer("Jude", "Law")
 
 
-class Read_File :
+## Design User Interface
 
-    def open_file() :
-        with open("text.txt", "r") as f :
-            lines = f.read()
-            print(lines)
-
-    def write_on_file(item1, item2, item3):
-        with open("text.txt", "w") as f:
-            listing = [item1, item2, item3]
-            for list in listing:
-                add_item = f.writelines(list+ "\n")
-            # print(listing + " Added")
+root = Tk()
+root.title("Create Customer")
 
 
-# Read_File.write_on_file("Lukaku", "Ukeme", "China")
 
-# Read_File.open_file()
+root.mainloop()
