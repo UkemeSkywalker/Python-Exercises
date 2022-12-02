@@ -201,15 +201,59 @@
 
 
 
-command_list = ["showinfo","showwarning", "showerror","askquestion", "askokcancel", "askyesno" ]
+# command_list = ["showinfo","showwarning", "showerror","askquestion", "askokcancel", "askyesno" ]
 
-# for word in command_list:
-#     print(word)
+# # for word in command_list:
+# #     print(word)
 
-i = 0
-while i < len(command_list):
-    cleanse = command_list[i].strip().split(" ")
-    print(command_list[i])
-    i += 1
+# i = 0
+# while i < len(command_list):
+#     cleanse = command_list[i].strip().split(" ")
+#     print(command_list[i])
+#     i += 1
+
+
+## Set time out on function
+# import signal
+
+# ## signal handler
+# def handler(signum, frame):
+#     print("Forever is Over!")
+#     raise Exception("end of time")
+
+## Long running function
+def loop():
+    import time
+    while True:
+        print("sec")
+        time.sleep(2)
+
+# loop()
+
+x = -1
+if x < 0 :
+    raise Exception("sorry, no numbers below zero")
+
+y = "Hello"
+
+if not type(y) is int :
+    raise TypeError("Only Integers are allowed")
+
+try:
+    print(x)
+except:
+    print("An exception occurred")
+
+# Register signal handler
+
+# signal.signal(signal.SIGALRM, handler)
+
+# # Define Timeout for function
+# signal.alarm(10)
+
+# try:
+#     loop()
+# except Exception as exc:
+#     print(exc)
 
 
