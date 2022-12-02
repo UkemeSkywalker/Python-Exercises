@@ -111,10 +111,22 @@ def db_tables() :
     title.pack()
     read_from_storage()
 
+    exit_btn= create_button(db_window, "Exit", db_window.destroy)
+    
+    
+    
 def read_from_storage():
-    with open("data.txt", "r") as f :
+    global data
+    global path
+    path = './data.txt'
+    with open(path, "r") as f :
         data = f.read()            
         print(data)
+    # f.close()
+
+def create_button(root, name, handler) :
+    button = Button(root, text=name, command=handler)
+    button.pack()
 
 main_widget(root)
 
