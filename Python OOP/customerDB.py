@@ -1,4 +1,5 @@
 from tkinter import *
+import signal
 
 class Customer :
 
@@ -50,9 +51,9 @@ root = Tk()
 def main_widget(root):
     root.title("Create Customer")
 
-    title,name_label, name_e,membership_label, membership_e , submit_btn = create_widget()
+    title,name_label, name_e,membership_label, membership_e , submit_btn, check_db_btn= create_widget()
     
-    Display(title, name_label, name_e, membership_label, membership_e, submit_btn)
+    Display(title, name_label, name_e, membership_label, membership_e, submit_btn, check_db_btn)
 
 
 def create_widget( ):
@@ -62,12 +63,14 @@ def create_widget( ):
     name_e = Entry(root, width=50 )
     membership_e = Entry(root, width=50 )
     submit_btn = Button(root, text="Submit", width=20,  command=lambda: submit(name_e,membership_e ))   
+    check_db_btn = Button(root, text="Check Db Tables", command=db_tables)
     print(membership_e.get(), "Line 64")
 
-    return title, name_label, name_e, membership_label, membership_e , submit_btn 
+    return title, name_label, name_e, membership_label, membership_e , submit_btn , check_db_btn
 
 
-def Display(title, name_label, name_e, membership_label, membership_e, submit_btn ):
+
+def Display(title, name_label, name_e, membership_label, membership_e, submit_btn, check_db_btn):
     title.pack()
     name_label.pack()
     name_e.pack(pady=10)
@@ -76,20 +79,42 @@ def Display(title, name_label, name_e, membership_label, membership_e, submit_bt
     membership_e.pack(pady=10)
 
     submit_btn.pack(padx=5, pady=10)
+    check_db_btn.pack(pady=5)
 
 
 def submit(name, membership):
     name_data = name.get()
     membership_data = membership.get()
-    Customer(name_data, membership_data)
-    print(name_data, membership_data)
-    success_message(name_data)
+    if name_data == "" or membership_data == "":
+        error_handler()
+    else :
+        Customer(name_data, membership_data)
+        print(name_data, membership_data)
+        success_message(name_data)
 
 
 def success_message(name):
     
     message = Label(root, text="New Customer "+name+" Added")
     message.pack()
+
+
+def error_handler():
+        error_message = Label(root, text="Insert name and membership type")
+        error_message.pack()
+
+
+
+def db_tables() :
+    db_window = Toplevel()
+    title = Label(db_window, text="Customer Table", font=("Arial Bold", 20))
+    title.pack()
+    read_from_storage()
+
+def read_from_storage():
+    with open("data.txt", "r") as f :
+        data = f.read()            
+        print(data)
 
 main_widget(root)
 
