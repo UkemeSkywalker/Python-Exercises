@@ -80,14 +80,46 @@ os.write(f, data)
 # os.close(f)
 
 
-# item2 = ["Hisense Tv", "Television", "Image", 300000, "Electical Appliance"]
+item2 = ["Hisense Tv", "Television", "Image", 300000, "Electical Appliance"]
+
+item1 = [ "Fanta", "Orange Drink", "Image", 200, "Drinks"]
 
 # data=bytearray(item2)
 # file.write(data)
 # file.close()
 
-file = open("service.txt", "w")
-numbers=[10,20,30,40]
-data=str(numbers)
-file.write(data)
-file.close()
+# file = open("service.txt", "a")
+# # numbers=[10,20,30,40]
+# data=bytearray(item1)
+# file.write(data+"/n")
+# file.close()
+
+# f = open("service.txt", "rb")
+# data = f.read()
+# print(bytearray(data))
+
+# from pickle import dumps, loads
+
+# data = dumps(item1)
+
+# print(data)
+
+# data = loads(data)
+# print(data)
+
+
+import pickle 
+
+# Create and Write to File
+f = open("pickle_test.txt", "ab")
+items = str(item1)
+data = pickle.dump(items, f)
+f.close()
+
+
+# Read from file
+
+r = open("pickle_test.txt", "rb")
+d = pickle.load(r)
+print(d)
+r.close()
