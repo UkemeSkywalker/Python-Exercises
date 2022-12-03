@@ -222,27 +222,27 @@
 #     raise Exception("end of time")
 
 ## Long running function
-def loop():
-    import time
-    while True:
-        print("sec")
-        time.sleep(2)
+# def loop():
+#     import time
+#     while True:
+#         print("sec")
+#         time.sleep(2)
 
-# loop()
+# # loop()
 
-x = -1
-if x < 0 :
-    raise Exception("sorry, no numbers below zero")
+# x = -1
+# if x < 0 :
+#     raise Exception("sorry, no numbers below zero")
 
-y = "Hello"
+# y = "Hello"
 
-if not type(y) is int :
-    raise TypeError("Only Integers are allowed")
+# if not type(y) is int :
+#     raise TypeError("Only Integers are allowed")
 
-try:
-    print(x)
-except:
-    print("An exception occurred")
+# try:
+#     print(x)
+# except:
+#     print("An exception occurred")
 
 # Register signal handler
 
@@ -257,3 +257,17 @@ except:
 #     print(exc)
 
 
+
+
+import csv
+
+header = ["name", "description", "Image", "Price", "Tag"]
+item = ["Fanta", "Orange Drink", "Image", 200, "Drinks"]
+item2 = ["Hisense Tv", "Television", "Image", 300000, "Electical Appliance"]
+
+
+with open('./test.csv', "a") as f :
+    writer = csv.writer(f)
+    writer.writerow(header)
+
+    writer.writerow(item2)
