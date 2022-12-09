@@ -5,37 +5,33 @@ import sqlite3
 global data
 data = []
 
-
-
 app = customtkinter.CTk()
 
 def submit():
     user_input = (textbox.get())
     status = False
     insert_todo(user_input, status)
-    print("line 17", row_id)
+
+    data = get_data()
+    id = len(data) + 1
+    print("line 17", id)
     
     res = customtkinter.CTkLabel(master=app, text=user_input, font=("Calibri Bold", 20), anchor="e")
-    res.grid( row=row_id, column=0, )
-    row_id += 1
+    res.grid( row=id, column=0, )
     
     
 
     # res = customtkinter.CTkLabel(master=app, text=row, font=("Calibri Bold", 20))
     # res.grid( column=0)
-def display() :
 
-    global row_id
-    row_id = 4
-    
+def display() :
     todos =  get_data()
-    
+    id = 4
     for todo_data in todos :
-        
         res = customtkinter.CTkLabel(master=app, text=todo_data[0], font=("Calibri Bold", 20), anchor="e")
-        res.grid( row=row_id, column=0, )
-        print("line 33", row_id)
-        row_id += 1
+        res.grid( row=id, column=0, )
+        print("line 33", id)
+        id += 1
     print(todos)
         
 
@@ -54,8 +50,6 @@ def createDb() :
         db.rollback()
     db.close()
     
-## change files 
-
 
 def insert_todo(item, status):
     db = sqlite3.connect("todo.db")
