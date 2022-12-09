@@ -22,7 +22,7 @@ class Item :
 
 
 
-# item1 = [Item("Hisense Tv", "Television", "Image", 300000, "Electical Appliance")]
+item1 = [Item("Hisense Tv", "Television", "Image", 300000, "Electical Appliance")]
 # item2 = [Item("Fanta", "Orange Drink", "Image", 200, "Drinks")]
 # item3 = [Item("Probook15", "Laptop", "Image", 110, "Computers")]
 
@@ -31,7 +31,11 @@ class Item :
 # ]
 
 
-# # print(item1)
+# print(item1, "line 34")
+# print(type(item1))
+# new_item = tuple(item1)
+# print(type(new_item))
+# print(new_item)
 
 # import csv
 
