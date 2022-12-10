@@ -5,6 +5,8 @@ import sqlite3
 global data
 data = []
 
+ids = []
+
 app = customtkinter.CTk()
 
 
@@ -12,23 +14,20 @@ def submit():
     user_input = (textbox.get())
     status = False
     insert_todo(user_input, status)
+    print("line 17", ids[-1])
 
-    data = get_data()
-    # count = len(data)
-    print("line 17", id)
-    
+    # c = ids[-1]
     res = customtkinter.CTkLabel(master=app, text=user_input, font=("Calibri Bold", 20), anchor="e")
-    res.grid( row=id, column=0, )
+    res.grid( row=ids, column=0, )
+    # c+=1
+
     
     
 
     # res = customtkinter.CTkLabel(master=app, text=row, font=("Calibri Bold", 20))
     # res.grid( column=0)
 
-def counter( ):
-    global id
-    id = 4
-
+def counter():
     qry = "SELECT oid FROM todo"
     db = sqlite3.connect("./todo.db")
 
@@ -37,6 +36,7 @@ def counter( ):
         cur.execute(qry)
         res = cur.fetchall()
         last_id = res[-1]
+        return last_id
     except:
        print("get oid error..")
        db.rollback()
@@ -46,12 +46,14 @@ def counter( ):
 def display() :
     todos =  get_data()
     last_id = counter()
-    print(last_id)
+    _id = last_id[0]
+    print("line 50", _id)
     for todo_data in todos :
-        res = customtkinter.CTkLabel(master=app, text=todo_data[0], font=("Calibri Bold", 20), anchor="e")
-        res.grid( row=last_id, column=0, )
-        print("line 33", last_id)
-        last_id += 1
+        res = customtkinter.CTkLabel(master=app, text=todo_data, font=("Calibri Bold", 20), anchor="e")
+        res.grid( row=_id, column=0, )
+        print("line 33", _id)
+        _id += 1
+        ids.append(_id)
     print(todos)
     
 
@@ -95,7 +97,7 @@ def get_data():
         cur = db.cursor()
         cur.execute(qry)
         print("line 78")
-        data = cur.fetchall()
+        data = cur.fetchone()
         print(data)
         return data
         
@@ -125,7 +127,7 @@ def delete():
 # get_data()
 
 # data = get_data()
-# display()
+display()
 # delete()
 
 counter()
