@@ -7,13 +7,14 @@ data = []
 
 app = customtkinter.CTk()
 
+
 def submit():
     user_input = (textbox.get())
     status = False
     insert_todo(user_input, status)
 
     data = get_data()
-    id = len(data) + 1
+    # count = len(data)
     print("line 17", id)
     
     res = customtkinter.CTkLabel(master=app, text=user_input, font=("Calibri Bold", 20), anchor="e")
@@ -24,15 +25,36 @@ def submit():
     # res = customtkinter.CTkLabel(master=app, text=row, font=("Calibri Bold", 20))
     # res.grid( column=0)
 
+def counter( ):
+    global id
+    id = 4
+
+    qry = "SELECT oid FROM todo"
+    db = sqlite3.connect("./todo.db")
+
+    try:
+        cur = db.cursor()
+        cur.execute(qry)
+        res = cur.fetchall()
+        last_id = res[-1]
+    except:
+       print("get oid error..")
+       db.rollback()
+    db.close()
+
+    
 def display() :
     todos =  get_data()
-    id = 4
+    last_id = counter()
+    print(last_id)
     for todo_data in todos :
         res = customtkinter.CTkLabel(master=app, text=todo_data[0], font=("Calibri Bold", 20), anchor="e")
-        res.grid( row=id, column=0, )
-        print("line 33", id)
-        id += 1
+        res.grid( row=last_id, column=0, )
+        print("line 33", last_id)
+        last_id += 1
     print(todos)
+    
+
         
 
 def createDb() :
@@ -67,13 +89,14 @@ def insert_todo(item, status):
 
 def get_data():
     db = sqlite3.connect("todo.db")
-    qry = "SELECT * FROM todo"
+    qry = "SELECT * FROM todo;"
 
     try:
         cur = db.cursor()
         cur.execute(qry)
+        print("line 78")
         data = cur.fetchall()
-        # print(data)
+        print(data)
         return data
         
         
@@ -102,8 +125,10 @@ def delete():
 # get_data()
 
 # data = get_data()
-display()
+# display()
 # delete()
+
+counter()
 
 
 app.geometry("900x500")
