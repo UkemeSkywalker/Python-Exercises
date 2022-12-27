@@ -259,15 +259,24 @@
 
 
 
-import csv
+# import csv
 
-header = ["name", "description", "Image", "Price", "Tag"]
-item = ["Fanta", "Orange Drink", "Image", 200, "Drinks"]
-item2 = ["Hisense Tv", "Television", "Image", 300000, "Electical Appliance"]
+# header = ["name", "description", "Image", "Price", "Tag"]
+# item = ["Fanta", "Orange Drink", "Image", 200, "Drinks"]
+# item2 = ["Hisense Tv", "Television", "Image", 300000, "Electical Appliance"]
 
 
-with open('./test.csv', "a") as f :
-    writer = csv.writer(f)
-    writer.writerow(header)
+# with open('./test.csv', "a") as f :
+#     writer = csv.writer(f)
+#     writer.writerow(header)
 
-    writer.writerow(item2)
+#     writer.writerow(item2)
+
+
+#nested loops
+## Domino tiles examples
+
+for left in range(7):
+    for right in range(left, 7):
+        print("["+ str(left)+"|"+str(right)+"]", end=" ")
+    print()
