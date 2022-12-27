@@ -286,9 +286,22 @@
 # make sure the same team are not paired
 ## home and away paring
 
-teams = ["Manchester United", "Barcalona", "Liverpool", "PSG", "Real Mardrid"]
+# teams = ["Manchester United", "Barcalona", "Liverpool", "PSG", "Real Mardrid"]
 
-for home in teams:
-    for away in teams:
-        if home != away:
-            print(home + " Vs " + away)
+# for home in teams:
+#     for away in teams:
+#         if home != away:
+#             print(home + " Vs " + away)
+
+
+## Recoursion
+
+def sum_positive_numbers(n):
+    # The base case is n being smaller than 1
+    num = 1
+    if n < num:
+        for i in range(n):
+            num += i
+    return num
+
+print(sum_positive_numbers(3))
