@@ -276,7 +276,19 @@
 #nested loops
 ## Domino tiles examples
 
-for left in range(7):
-    for right in range(left, 7):
-        print("["+ str(left)+"|"+str(right)+"]", end=" ")
-    print()
+# for left in range(7):
+#     for right in range(left, 7):
+#         print("["+ str(left)+"|"+str(right)+"]", end=" ")
+#     print()
+
+
+# Team Pairing example
+# make sure the same team are not paired
+## home and away paring
+
+teams = ["Manchester United", "Barcalona", "Liverpool", "PSG", "Real Mardrid"]
+
+for home in teams:
+    for away in teams:
+        if home != away:
+            print(home + " Vs " + away)
