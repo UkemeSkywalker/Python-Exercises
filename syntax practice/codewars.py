@@ -35,3 +35,34 @@ print(count_sheep2(sheeps))
 
 def greet(name):
     return ("Hello, "+name+" how are you doing today?")
+
+def greet2(name):
+    return "Hello, %s how are you doing today?" % name
+
+def greet3(name):
+    return f'Hello, {name} how are you doing today?'
+
+
+# Can you find the needle in the haystack?
+
+# Write a function findNeedle() that takes an array full of junk but containing one "needle"
+
+# After your function finds the needle it should return a message (as a string) that says:
+
+# "found the needle at position " plus the index it found the needle, so:
+
+
+junk = ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]
+
+def findNeedle(junk):
+    for i in junk :
+        if i == "needdle" :
+            print ("Test")
+            return print("found the needle at position " + str(junk.index(i)))
+
+
+
+def find_needle(haystack): return 'found the needle at position %d' % haystack.index('needle')
+
+findNeedle(junk)
+
