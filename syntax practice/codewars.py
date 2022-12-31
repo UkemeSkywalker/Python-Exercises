@@ -71,7 +71,11 @@ findNeedle(junk)
 # In this simple assignment you are given a number and have to make it negative. 
 # But maybe the number is already negative?
 
-def make_negative( number ):
+def make_negative(number):
+    return -abs(number)
+
+## option 2
+def make_negative2( number ):
     if number == 0 :
         return number
     elif number > 0 :
@@ -79,6 +83,24 @@ def make_negative( number ):
     elif number < 0:
         return number
 
+
 make_negative(1);  # return -1
 make_negative(-5); # return -5
 make_negative(0);  # return 0
+
+
+# Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language )
+# that receive a list of integers as input, and return the largest and lowest number in that list,
+# respectively.
+
+def minimum(arr):
+    return min(arr)
+
+def maximum(arr):
+    return max(arr)
+
+
+arr = [4,6,2,1,9,63,-134,566]        
+
+minimum(arr)
+maximum(arr)
