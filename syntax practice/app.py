@@ -372,7 +372,89 @@
 
 # formating Strings
 
-name = "Skywalker"
-lucky_number = len(name)*2
+# name = "Skywalker"
+# lucky_number = len(name)*2
 
-print("Hello {}, your lucky number is {}".format(name, lucky_number))
+# print("Hello {}, your lucky number is {}".format(name, lucky_number))
+
+
+# def student_grade(name, grade):
+# 	return "{name} recieved {grade}% on the exam".format(name = name, grade = grade)
+
+# print(student_grade("Reed", 80))
+# print(student_grade("Paige", 92))
+# print(student_grade("Jesse", 85))
+
+
+
+# price = 13.2424
+# with_tax = price + 5.32155
+# name = "James"
+# print("Hello {} the price is ${:.2f}, total with tax {:.2f}".format(name, price, with_tax))
+
+
+'''
+Question 1
+The is_palindrome function checks if a string is a palindrome. 
+A palindrome is a string that can be equally read from left to right or right to left, 
+omitting blank spaces, and ignoring capitalization. Examples of palindromes are words 
+like kayak and radar, and phrases like "Never Odd or Even". 
+Fill in the blanks in this function to return True if the passed string is a palindrome, 
+False if not.
+'''
+
+# def is_palindrome(input_string):
+# 	# We'll create two strings, to compare them
+# 	new_string = ""
+# 	reverse_string = ""
+# 	# Traverse through each letter of the input string
+# 	for letter in input_string:
+# 		# Add any non-blank letters to the 
+# 		# end of one string, and to the front
+# 		# of the other string. 
+# 		if letter != " ":
+# 			new_string += letter.lower()
+# 			reverse_string = new_string.lower()[::-1]
+# 	# Compare the strings
+# 	if new_string == reverse_string:
+# 		return True
+# 	return False
+
+# print(is_palindrome("Never Odd or Even")) # Should be True
+# print(is_palindrome("abc")) # Should be False
+# print(is_palindrome("kayak")) # Should be True
+
+
+# def replace_ending(sentence, old, new):
+# 	# Check if the old string is at the end of the sentence 
+    
+#     if sentence.endswith(old):
+# 		# Using i as the slicing index, combine the part
+# 		# of the sentence up to the matched string at the 
+# 		# end with the new string
+
+#         i = sentence.rfind(old)
+#         new_sentence = sentence[:i]+new 
+        
+#         return new_sentence
+
+# 	# Return the original sentence if there is no match 
+#     return sentence
+	
+# print(replace_ending("It's raining cats and cats", "cats", "dogs")) 
+# # Should display "It's raining cats and dogs"
+# print(replace_ending("She sells seashells by the seashore", "seashells", "donuts")) 
+# # Should display "She sells seashells by the seashore"
+# print(replace_ending("The weather is nice in May", "may", "april")) 
+# # Should display "The weather is nice in May"
+# print(replace_ending("The weather is nice in May", "May", "April")) 
+# # Should display "The weather is nice in April"
+
+
+names = ['Folake', 'Abraham', 'Johnson', 'Oluchi']
+
+total_chars = 0
+for name in names:
+    total_chars += len(name)
+
+print("Total Characters: {}, the average characters {}".format(total_chars, total_chars/len(names)))
