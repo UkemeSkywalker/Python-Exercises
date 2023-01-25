@@ -296,15 +296,15 @@
 
 ## Recoursion
 
-def sum_positive_numbers(n):
-    # The base case is n being smaller than 1
-    num = 1
-    if n < num:
-        for i in range(n):
-            num += i
-    return num
+# def sum_positive_numbers(n):
+#     # The base case is n being smaller than 1
+#     num = 1
+#     if n < num:
+#         for i in range(n):
+#             num += i
+#     return num
 
-print(sum_positive_numbers(3))
+# print(sum_positive_numbers(3))
 
 
 
@@ -368,3 +368,11 @@ print(sum_positive_numbers(3))
 " this is a string ".count("a")
 
 "".join(["This","is","a","sentence"])
+
+
+# formating Strings
+
+name = "Skywalker"
+lucky_number = len(name)*2
+
+print("Hello {}, your lucky number is {}".format(name, lucky_number))
