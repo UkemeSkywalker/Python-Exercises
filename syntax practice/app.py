@@ -358,3 +358,10 @@ print(sum_positive_numbers(3))
 ⠄⠄⠄⠄⠄⠄⠄⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁⠄⠄⠄⠄⠄⢀⣠⣴
 ⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿
 '''
+
+
+# String Methods
+"this is a string".upper()
+"this is a string".lower()
+
+" this is a string ".strip()
