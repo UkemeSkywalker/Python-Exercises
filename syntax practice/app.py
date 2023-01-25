@@ -365,3 +365,6 @@ print(sum_positive_numbers(3))
 "this is a string".lower()
 
 " this is a string ".strip()
+" this is a string ".count("a")
+
+"".join(["This","is","a","sentence"])
