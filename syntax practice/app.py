@@ -453,8 +453,50 @@ False if not.
 
 names = ['Folake', 'Abraham', 'Johnson', 'Oluchi']
 
-total_chars = 0
-for name in names:
-    total_chars += len(name)
+# total_chars = 0
+# for name in names:
+#     total_chars += len(name)
 
-print("Total Characters: {}, the average characters {}".format(total_chars, total_chars/len(names)))
+# print("Total Characters: {}, the average characters {}".format(total_chars, total_chars/len(names)))
+
+for index, name in enumerate(names):
+    print("{} - {}".format(index + 1, name) )
+
+
+# def staff_info(staffs):
+#     result = []
+
+#     for fullname, email in staffs:
+#         result.append("{} <{}>".format(fullname, email))
+#     return print(result)
+
+# staff_info([("ukeme", "ukeme@gmail.com"), ("James", "jamieG@yahoo.com")])
+
+#list comprehension
+
+languages = ["Java", "Python", "Ruby", "Solidity", "Javascript"]
+
+lengths = [len(langauage) for langauage in languages]
+
+# print(lengths)
+
+
+def biograpy_list(people):
+    for person in people:
+        name, age, proffesion = person
+        print(f"{name} is {age} years old and works as a {proffesion}")
+
+# biograpy_list([("ukeme", 23, "cloud engineer"), ("chi chi", 24, "Teacher")])
+
+x = {}
+file_count = {"txt": 23, "jpg": 10, "mp3": 12}
+print (file_count)
+
+print(file_count["jpg"])
+print("mp3" in file_count)
+
+file_count["jpg"] =34
+print(file_count)
+
+del file_count["txt"]
+print(file_count)
