@@ -13,7 +13,7 @@ def add_item(name, description, image, price, tag, category):
 
 
 # Db.create_table(db)
-# add_item("Hp Probook 15", "Hp Laptop", "Preview", 110000, "Laptop", "Electrical & Appliances")
+add_item("Hp Probook 15", "Hp Laptop", "Preview", 110000, "Laptop", "Electrical & Appliances")
 
 # Db.delete(db, 4)
 # Db.return_one_item(db, 2)
